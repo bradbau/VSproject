@@ -28,6 +28,7 @@
     <ClCompile Include="exper  6.2.4(3) cmd for rank.c" />
     <ClCompile Include="exper  6.2.4(4) stu_info_cal.c" />
     <ClCompile Include="exper  6.2.5(1)  long float add.c" />
+    <ClCompile Include="exper  6.2.5（2）complicate define.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

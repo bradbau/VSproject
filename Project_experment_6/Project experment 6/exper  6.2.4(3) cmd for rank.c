@@ -1,4 +1,4 @@
-#define max
+//#define max
 #ifdef max
 
 #include<stdio.h>
@@ -9,7 +9,7 @@ void number_rank_papr(int * p, int n, int argc)
 	int i,j, t;
 	for (i = 0; i < n; ++i) {
 		for (j = 0; j < n; ++j) {
-			if (argc) {
+			if (argc>1) {
 				if (*(p + j) < *(p + j + 1)) {
 					t = *(p + j);
 					*(p + j) = *(p + j + 1);

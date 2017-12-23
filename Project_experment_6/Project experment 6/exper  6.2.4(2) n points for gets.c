@@ -1,39 +1,34 @@
-//#define max
-#ifdef max
+//#define maxj
+#ifdef maxj
 
 #include<stdio.h>
 #include<string.h>
 #include<malloc.h>
 typedef char buffer[81];
-void compact_space(char *p, int l);
+int compact_space(char *p, int l);
 
 int main()
 {
 	
-	int x, i, n;
+	int x, i, n, *len;
 	scanf("%d", &n);
 	getchar();
+	len = (int *)malloc(sizeof(int)*n);
 	char **p=(char  **)malloc(sizeof(buffer *)*n);
 	for (i = 0; i < n; ++i) {
 		p[i] = malloc(sizeof(buffer));
 		gets_s(p[i], 80);
 	}
 	for (i = 0; i < n; ++i) {
-		compact_space(p[i], 80);
-
+		len[i]=compact_space(p[i], 80);
+		p[i][len[i]] = 0;
 	}
-	int j;
-	for (i = 0; i < n; ++i) {
-		
+	for (i = 0; i < n; ++i) 
 		printf("%s\n", p[i]);
-		for (j = 0; j < 80; ++j) {
-			printf("%c", p[i][j]);
-		}
-	}
 	return 0;
 }
 
-void compact_space(char *p, int l)
+int compact_space(char *p, int l)
 {
 	char *st = (char *)malloc(sizeof(char)*l);
 	int i = 0, j = 0, state = 0;
@@ -54,11 +49,12 @@ void compact_space(char *p, int l)
 		++i;
 		++j;
 	}
-	memset(p, 0, l);
+	int length;
+	length = j;
 	for (i = 0; *(st + i); ++i) {
 		*(p + i) = *(st + i);
 	}
-	p[60] = 0;
+	return length;
 }
 
 #endif

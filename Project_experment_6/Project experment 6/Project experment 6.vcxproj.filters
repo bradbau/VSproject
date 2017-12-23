@@ -42,5 +42,8 @@
     <ClCompile Include="exper  6.2.5(1)  long float add.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="exper  6.2.5（2）complicate define.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
